@@ -1,0 +1,13 @@
+## Interface: 120000, 120001, 120005, 120007, 120100
+## Title: |cff0cd29fEllesmereUI|r - Group Target Frames
+## Notes: Adds a small clickable frame next to each party member showing that member's current target.
+## Author: Andrew Painter
+## Version: 0.1.0
+## Category: |cff0cd29fEllesmere|rUI
+## Group: EllesmereUI
+## RequiredDeps: EllesmereUI, EllesmereUIRaidFrames
+## SavedVariables: EllesmereUIGroupTargetFrameDB
+## IconTexture: Interface\Icons\Ability_Hunter_SniperShot
+
+Core.lua
+GroupTargets.lua
