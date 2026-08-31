@@ -22,6 +22,8 @@ EllesmereUI PR [#1510](https://github.com/EllesmereGaming/EllesmereUI/pull/1510)
 (`feature/party-target-frames`). Packaging it as its own add-on lets you run the
 feature while that PR is under review, with no changes to the EllesmereUI suite.
 
+<img width="283" height="399" alt="636854766-d2f2c244-03e9-4c60-861a-797a8e92a606" src="https://github.com/user-attachments/assets/e45f6d0b-a488-487b-92a6-de56a8cfae55" />
+
 ---
 
 ## How it works (and why it is taint-free)
