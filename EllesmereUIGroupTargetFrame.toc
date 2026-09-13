@@ -2,7 +2,7 @@
 ## Title: |cff0cd29fEllesmereUI|r - Group Target Frames
 ## Notes: Adds a small clickable frame next to each party member showing that member's current target.
 ## Author: Andrew Painter
-## Version: 0.1.0
+## Version: 0.1.1
 ## Category: |cff0cd29fEllesmere|rUI
 ## Group: EllesmereUI
 ## RequiredDeps: EllesmereUI, EllesmereUIRaidFrames

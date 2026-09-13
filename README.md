@@ -62,6 +62,13 @@ mirroring EllesmereUI's Target vs Target-of-Target size convention.
 
 ## Integration points used
 
+### Version 0.1.1
+
+- Updated target-name refresh for EllesmereUI v9.1.8's Party Frames in Small Raids mode.
+- Target-change events now match each displayed button's current owner unit,
+  including raid indices above five and units reassigned after roster changes.
+- Lua 5.1 syntax and focused event-handler checks passed. In-game testing is still required.
+
 Determined by reading the [EllesmereGaming/EllesmereUI](https://github.com/EllesmereGaming/EllesmereUI)
 source (module `EllesmereUIRaidFrames`), not from assumptions.
 
