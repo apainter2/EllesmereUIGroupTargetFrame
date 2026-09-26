@@ -105,10 +105,20 @@ function EGTF.Profile()
     return EGTF.RFA and EGTF.RFA.db and EGTF.RFA.db.profile or nil
 end
 
+-- EllesmereUI 9.2.9's rebuilt Party Targets feature exposes this entry point.
+-- When its option is enabled, leave the standalone companion dormant so it
+-- never creates a second secure target button beside every party frame.
+function EGTF.NativePartyTargetsEnabled()
+    local profile = EGTF.Profile()
+    return EGTF.RF and type(EGTF.RF.PT_SetEnabled) == "function"
+        and profile and profile.partyShowTargets == true
+end
+
 -- Recompute whether the target frames should be running and flip them on/off
 -- accordingly. Safe to call repeatedly.
 function EGTF.Refresh()
-    local shouldRun = EGTF.db and EGTF.db.enabled and DetectDeps() and true or false
+    local nativeEnabled = EGTF.NativePartyTargetsEnabled()
+    local shouldRun = EGTF.db and EGTF.db.enabled and DetectDeps() and not nativeEnabled and true or false
     if shouldRun and not EGTF.active then
         EGTF.active = true
         EGTF.EnableTargets()   -- GroupTargets.lua
@@ -116,6 +126,7 @@ function EGTF.Refresh()
     elseif (not shouldRun) and EGTF.active then
         EGTF.active = false
         EGTF.DisableTargets()  -- GroupTargets.lua
+        if nativeEnabled then EGTF.Debug("Native Party Targets is enabled; standalone frames are dormant.") end
         EGTF.Debug("Group target frames disabled.")
     end
 end
@@ -128,6 +139,9 @@ local function PrintStatus()
     local db = EGTF.db
     EGTF.Print("Status: " .. (db.enabled and "|cff40ff40enabled|r" or "|cffff4040disabled|r")
         .. (EGTF.active and " (running)" or " (idle)"))
+    if EGTF.NativePartyTargetsEnabled() then
+        EGTF.Print("|cffffcc00Native Party Targets is enabled; this companion is dormant to avoid duplicate frames.|r")
+    end
     EGTF.Print(string.format("Size: width=%.2fx height=%.2fx of party button.  debug=%s",
         db.widthScale, db.heightScale, tostring(db.debug)))
     if not DetectDeps() then

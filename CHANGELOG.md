@@ -2,6 +2,11 @@
 
 All notable changes to this project are documented in this file.
 
+## 0.1.4 - 2026-09-26
+
+- Added compatibility with EllesmereUI 9.2.9's rebuilt native Party Targets feature.
+- The standalone frames now remain dormant whenever the native Party Targets option is enabled, preventing duplicate secure target buttons.
+
 ## 0.1.3 - 2026-09-25
 
 - Confirmed compatibility with EllesmereUI 9.2.9.

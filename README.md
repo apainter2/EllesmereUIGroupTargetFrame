@@ -62,9 +62,10 @@ mirroring EllesmereUI's Target vs Target-of-Target size convention.
 
 ## Integration points used
 
-### Version 0.1.3
+### Version 0.1.4
 
 - Verified against EllesmereUI v9.2.9.
+- When EllesmereUI's rebuilt native **Party Targets** option is enabled, this companion stays dormant to avoid duplicate target frames.
 - Retains the target-name refresh for Party Frames in Small Raids mode.
 - Target-change events now match each displayed button's current owner unit,
   including raid indices above five and units reassigned after roster changes.
